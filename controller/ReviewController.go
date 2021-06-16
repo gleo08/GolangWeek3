@@ -57,7 +57,7 @@ func CreateReview(c *fiber.Ctx) error {
 	}
 
 	reviewId := repo.Reviews.CreateNewReview(review)
-	return c.SendString(fmt.Sprintf("New book is created successfully with id = %d", reviewId))
+	return c.SendString(fmt.Sprintf("New review is created successfully with id = %d", reviewId))
 
 }
 
@@ -79,7 +79,7 @@ func UpdateReview(c *fiber.Ctx) error {
 		return c.Status(404).SendString(err.Error())
 	}
 
-	return c.SendString(fmt.Sprintf("Book with id = %d is successfully updated", updatedReview.Id))
+	return c.SendString(fmt.Sprintf("Review with id = %d is successfully updated", updatedReview.Id))
 
 }
 
@@ -97,7 +97,7 @@ func UpsertReview(c *fiber.Ctx) error {
 	}
 
 	id := repo.Reviews.Upsert(review)
-	return c.SendString(fmt.Sprintf("Book with id = %d is successfully upserted", id))
+	return c.SendString(fmt.Sprintf("Review with id = %d is successfully upserted", id))
 }
 
 func AverageRating(c *fiber.Ctx) error {

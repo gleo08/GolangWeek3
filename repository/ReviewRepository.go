@@ -36,29 +36,29 @@ func (r *ReviewRepo) CreateNewReview(review *model.Review) int64 {
 func (r *ReviewRepo) InitData(connection string) {
 	fmt.Println("Connect to ", connection)
 
-	r.CreateNewReview(&model.Review{
-		BookId:  1,
-		Comment: "good",
-		Rating:  4,
-	})
+	// r.CreateNewReview(&model.Review{
+	// 	BookId:  1,
+	// 	Comment: "good",
+	// 	Rating:  4,
+	// })
 
-	r.CreateNewReview(&model.Review{
-		BookId:  2,
-		Comment: "bad",
-		Rating:  2,
-	})
+	// r.CreateNewReview(&model.Review{
+	// 	BookId:  2,
+	// 	Comment: "bad",
+	// 	Rating:  2,
+	// })
 
-	r.CreateNewReview(&model.Review{
-		BookId:  2,
-		Comment: "bad",
-		Rating:  2,
-	})
+	// r.CreateNewReview(&model.Review{
+	// 	BookId:  2,
+	// 	Comment: "bad",
+	// 	Rating:  2,
+	// })
 
-	r.CreateNewReview(&model.Review{
-		BookId:  1,
-		Comment: "good",
-		Rating:  4,
-	})
+	// r.CreateNewReview(&model.Review{
+	// 	BookId:  1,
+	// 	Comment: "good",
+	// 	Rating:  4,
+	// })
 }
 
 func (r *ReviewRepo) GetAllReviews() map[int64]*model.Review {
@@ -69,7 +69,7 @@ func (r *ReviewRepo) FindReviewById(Id int64) (*model.Review, error) {
 	if review, ok := r.reviews[Id]; ok {
 		return review, nil //tìm được
 	} else {
-		return nil, errors.New("review not found")
+		return nil, errors.New("0")
 	}
 }
 
